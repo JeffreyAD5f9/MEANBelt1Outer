@@ -1,0 +1,16 @@
+<div ng-controller="QuestionsController as QC">
+
+  <h1>New Question</h1>
+  <a href = "/welcome">Home</a>
+  <a href = "/">Logout</a>
+
+  <form>
+      Question: <input type='text' ng-model='QC.newQuestion.question'>
+      Description: <input type='text' ng-model='QC.newQuestion.description'>
+      <input type='submit' value='Register' ng-click='QC.addQuestion(QC.newQuestion)'>
+  </form>
+  <a href = "/welcome">Cancel</a>
+  <p class='errors' ng-repeat="error in QC.errors"> {{error}} </p>
+
+
+</div>

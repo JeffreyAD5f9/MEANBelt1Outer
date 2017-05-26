@@ -1,0 +1,21 @@
+<div ng-controller="QuestionsController as QC", ng-controller="AnswersController as AC">
+
+  <a href = "/welcome">Home</a>
+  <a href = "/answer">Answer Question</a>
+  <a href = "/">Logout</a>
+
+      <h1 ng-init = "QC.showQuestion()">{{QC.question.question}}</h1>
+      <p>{{QC.question.description}}</p>
+
+
+      <table ng-init = "AC.index()">
+        <tr><th>Answer</th><th>Likes</th><th>Action</th></tr>
+        <tr ng-repeat="answer in AC.answers track by $index">
+          <td>{{answer.answer}}</td>
+          <td>{{answer.details}}</td>
+          <td>{{answer.likes}}</td>
+          <td><button ng-click="AC.addLike(answer._id)">+1</button></td>
+        </tr>
+      </table>
+
+  </div>

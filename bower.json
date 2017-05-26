@@ -1,0 +1,27 @@
+{
+  "name": "Belt1",
+  "description": "none",
+  "main": "server.js",
+  "authors": [
+    "Heiavian"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "none"
+  ],
+  "homepage": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-messages": "^1.6.4"
+  }
+}

@@ -1,0 +1,16 @@
+<div ng-controller="QuestionsController as QC", "AnswersController as AC">
+
+  <h1>Answer Question</h1>
+  <a href = "/welcome">Home</a>
+  <a href = "/">Logout</a>
+
+  <form>
+      Answer: <input type='text' ng-model='AC.newAnswer.answer'>
+      Details: <input type='text' ng-model='AC.newAnswer.details'>
+      <input type='submit' value='Register' ng-click='AC.addAnswer(AC.newAnswer)'>
+  </form>
+  <a href = "/welcome">Cancel</a>
+  <p class='errors' ng-repeat="error in AC.errors"> {{error}} </p>
+
+
+</div>

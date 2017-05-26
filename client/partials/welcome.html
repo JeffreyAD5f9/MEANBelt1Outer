@@ -1,0 +1,19 @@
+<div ng-controller="UsersController as UC", ng-controller="QuestionsController as QC">
+
+
+  <h1 ng-init = "UC.showUser()">Welcome {{UC.user.name}}</h1>
+  <a href = '/users/' + {{ UC.user.id}} >Post a Question</a>
+  <a href = "/">Logout</a>
+
+
+  <table ng-init = "QC.index()">
+    <tr><th>Questions</th><th>Actions</th></tr>
+    <tr ng-repeat="question in QC.questions track by $index">
+      <td>{{question.question}}</td>
+      <td><button ng-click="QC.showQuestion(question._id)">Show</button></td>
+      <td><a href = "/answer">Answer Question</a></td>
+    </tr>
+  </table>
+
+
+  </div>
