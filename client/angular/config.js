@@ -1,33 +1,27 @@
 
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngCookies']);
 
 app.config(function($routeProvider){
   $routeProvider
     .when('/',{
         templateUrl: 'partials/newUsers.html',
-        controller: 'UsersController'
+        controller: 'UsersController as UC'
     })
-    .when('/welcome/:id',{
+    .when('/welcome',{
         templateUrl: 'partials/welcome.html',
-        controller: 'UsersController',
-        controller: 'QuestionsController'
+        controller: 'UsersController as UC'
     })
-    .when('/post/:id',{
+    .when('/postQuest',{
         templateUrl: 'partials/postQuestion.html',
-        controller: 'UsersController',
-        controller: 'QuestionsController'
+        controller: 'UsersController as UC'
     })
     .when('/view/:id',{
         templateUrl: 'partials/viewQuestion.html',
-        controller: 'UsersController',
-        controller: 'QuestionsController',
-        controller: 'AnswersController'
+        controller: 'UsersController as UC'
     })
     .when('/answer/:id',{
         templateUrl: 'partials/answer.html',
-        controller: 'UsersController',
-        controller: 'QuestionsController',
-        controller: 'AnswersController'
+        controller: 'UsersController as UC'
     })
     .otherwise({
       redirectTo: '/'

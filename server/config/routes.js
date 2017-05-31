@@ -6,8 +6,8 @@ var Answers = require('../controllers/answers.js');
 module.exports = function(app){
     app.get('/users', Users.index);
     app.post('/users', Users.addUser);
+    app.post('/sessions', Users.loginUser);
     app.get('/users/:id', Users.showUser);
-    app.get('/users/:userLog', Users.loginUser);
 
     app.get('/quests', Questions.index);
     app.post('/quests', Questions.addQuestion);
@@ -16,4 +16,6 @@ module.exports = function(app){
     app.get('/answers', Answers.index);
     app.post('/answers', Answers.addAnswer);
     app.get('/answers/:id', Answers.showAnswer);
+    app.post('/answers/:id', Answers.likeAnswer);
+
 }

@@ -1,16 +1,19 @@
-<div ng-controller="QuestionsController as QC", "AnswersController as AC">
+<div ng-controller="QuestionsController as QC">
 
   <h1>Answer Question</h1>
-  <a href = "/welcome">Home</a>
+  <a href = "/#!/welcome">Home</a>
   <a href = "/">Logout</a>
 
+    <h2 ng-init = "QC.displayQuestion()">{{QC.question.question}}</h2>
+    <h4>{{ QC.question.description }}</h4>
+
   <form>
-      Answer: <input type='text' ng-model='AC.newAnswer.answer'>
-      Details: <input type='text' ng-model='AC.newAnswer.details'>
-      <input type='submit' value='Register' ng-click='AC.addAnswer(AC.newAnswer)'>
+      Answer: <input type='text' ng-model='QC.newAnswer.answer'>
+      Details: <input type='text' ng-model='QC.newAnswer.details'>
+      <input type='submit' value='Answer' ng-click='QC.addAnswer(QC.newAnswer)'>
   </form>
-  <a href = "/welcome">Cancel</a>
-  <p class='errors' ng-repeat="error in AC.errors"> {{error}} </p>
+  <a href = "/#!/welcome">Cancel</a>
+  <p class='errors' ng-repeat="error in QC.errors"> {{error}} </p>
 
 
 </div>

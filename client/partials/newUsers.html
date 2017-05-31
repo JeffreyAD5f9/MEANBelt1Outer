@@ -4,7 +4,7 @@
       Name: <input type='text' ng-model='UC.newUser.name'>
       <input type='submit' value='Register' ng-click='UC.addUser(UC.newUser)'>
   </form>
-  <p class='errors' ng-repeat="error in UC.errors"> {{error}} </p>
+  <p class='errors' ng-repeat="error in UC.regErrors"> {{error}} </p>
 
 
 <h3>Developer View: Track Users</h3>
@@ -19,6 +19,6 @@
     <input type="text"  ng-model = "UC.userLog.name">
     <input type="submit" value = "Login" ng-click='UC.loginUser(UC.userLog)'>
   </form>
-  <p class='errors' ng-repeat="error in UC.errors"> {{error}} </p>
+  <p class='errors' ng-repeat="error in UC.logErrors track by $index"> {{error}} </p>
 
 </div>

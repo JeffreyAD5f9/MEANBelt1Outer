@@ -1,18 +1,18 @@
-app.factory('QuestionFactory', function($http){
+app.factory('QuestionFactory', function($http, $cookies){
    var factory = {};
    var factoryQuestions = []
 
    factory.index = function(call){
      console.log('factoryIndexQ');
-     $http.get('/users').then(call);
+     $http.get('/quests').then(call);
    }
    factory.addQuestion = function(newQuestion, call){
      console.log('factoryAddQ');
-     $http.post('/users', newQuestion).then(call);
+     $http.post('/quests', newQuestion).then(call);
    }
    factory.showQuestion = function(id, call){
      console.log('factoryShowQ');
-     $http.get('/users/' + id).then(call);
+     $http.get('/quests/' + id).then(call);
   }
 
 

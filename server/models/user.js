@@ -6,6 +6,14 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Username cannot be blank."],
     maxlength: [120, "Name cannot exceed 120 characters."]
+  },
+  questions: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Question'
+  },
+  answers: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Answer'
   }
 }, {timestamps: true})
 

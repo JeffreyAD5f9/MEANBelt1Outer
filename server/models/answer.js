@@ -7,12 +7,19 @@ var AnswerSchema = new mongoose.Schema({
     required: [true, "Answer cannot be blank."]
   },
   details: {
-    type: String,
+    type: String
   },
   likes: {
-    type: Number
-  }
+    type: Number,
+    default: 0
+  },
+  user: {
 
+  },
+  question: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Question'
+  }
 }, {timestamps: true})
 
 mongoose.model('Answer', AnswerSchema);

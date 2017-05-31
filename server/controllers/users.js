@@ -7,7 +7,7 @@ module.exports = {
 
   index: function(request, response){
     console.log('serverInitU');
-    User.find({}).exec(function(error, users){
+    User.find({}, function(error, users){
       if(error){
         return response.json(error);
       }
@@ -16,14 +16,17 @@ module.exports = {
   },
   showUser: function(request, response){
     console.log('serverShowU');
-    console.log(userLog);
-    User.findById(userLog, function(error, user){
+    User.findById(request.params.id, function(error, user){
       if(error){
         return response.json(error);
       }
       if(!user){
         return response.json({
-          "errors": "User not in Database"
+          "errors": {
+            "login": {
+              "message": "User not in Database"
+            }
+          }
         })
       }
       return response.json(user);
@@ -35,20 +38,22 @@ module.exports = {
       if(error){
         return response.json(error);
       }
-      console.log(user);
       return response.json(user);
     })
   },
   loginUser: function(request, response){
     console.log('serverLoginU');
-    console.log(request.params.id);
-    User.findById(request.params.id, function(error, user){
+    User.findOne({ name: request.body.name }, function(error, user){
       if(error){
         return response.json(error);
       }
       if(!user){
         return response.json({
-          "errors": "User not in Database"
+          "errors": {
+            "login": {
+              "message": "User not in Database"
+            }
+          }
         })
       }
       return response.json(user);
